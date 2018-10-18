@@ -22,9 +22,9 @@ namespace WebApp.Controllers
             return View();
         }
 
-        public IActionResult Contact()
+        public IActionResult SocialMedia()
         {
-            ViewData["Message"] = "Your contact page.";
+            ViewData["Message"] = "Check me out all over the web!";
 
             return View();
         }
