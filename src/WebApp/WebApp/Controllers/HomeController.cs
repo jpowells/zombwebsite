@@ -15,13 +15,6 @@ namespace WebApp.Controllers
             return View();
         }
 
-        public IActionResult SocialMedia()
-        {
-            ViewData["Message"] = "Check me out all over the web!";
-
-            return View();
-        }
-
         public IActionResult TournamentResults()
         {
             return View();
