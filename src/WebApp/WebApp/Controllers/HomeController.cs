@@ -15,13 +15,6 @@ namespace WebApp.Controllers
             return View();
         }
 
-        public IActionResult About()
-        {
-            ViewData["Message"] = "Your application description page.";
-
-            return View();
-        }
-
         public IActionResult SocialMedia()
         {
             ViewData["Message"] = "Check me out all over the web!";
@@ -30,6 +23,11 @@ namespace WebApp.Controllers
         }
 
         public IActionResult TournamentResults()
+        {
+            return View();
+        }
+
+        public IActionResult MyEvents()
         {
             return View();
         }

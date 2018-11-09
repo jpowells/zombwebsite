@@ -3,5 +3,64 @@
     ViewData["Title"] = "Tournament Results";
 }
 
+<script src='https://cdnjs.cloudflare.com/ajax/libs/tabletop.js/1.5.1/tabletop.min.js'></script>
+<script type='text/javascript'>
+    var publicSpreadsheetUrl = 'https://docs.google.com/spreadsheets/d/1Y9FSrIkOx4KxDy7-ZYpx75hyHkqYgKS1vA1yCyU8rTs/edit?usp=sharing';
+
+    function init() {
+        Tabletop.init({
+            key: publicSpreadsheetUrl,
+            callback: showInfo,
+            simpleSheet: true,
+            orderby: 'Date',
+            reverse: true
+        })
+    }
+
+    function showInfo(data, tabletop) {
+        alert('Successfully processed!')
+        console.log(data);
+        data.forEach(addTournamentRow);
+    }
+
+    window.addEventListener('DOMContentLoaded', init)
+
+    function addTournamentRow(tournamentdata) {
+        if (tournamentdata.Placement){
+            var table = document.getElementById(tournamentdata.Size);
+            if (table) {
+                var row = table.insertRow(-1);
+                var tournamentNameCell = row.insertCell(0);
+                var gameNameCell = row.insertCell(1);
+                var placementCell = row.insertCell(2);
+                var dateCell = row.insertCell(3);
+                tournamentNameCell.innerHTML = "<a target=_blank href=" + tournamentdata.Link + ">" + tournamentdata.Tournament + "</a>";
+                gameNameCell.innerHTML = tournamentdata.Game;
+                placementCell.innerHTML = tournamentdata.Placement + " of " + tournamentdata.Entrants;
+                dateCell.innerHTML = tournamentdata.Date;
+            }
+        }
+    }
+</script>
+
 <h2>@ViewData["Title"]</h2>
 
+<h3>Majors</h3>
+<table id="Major" style="width:100%">
+    <tr>
+        <th>Tournament</th>
+        <th>Game</th>
+        <th>Placement</th>
+        <th>Date</th>
+    </tr>
+</table>
+
+<h3>Locals</h3>
+<table id="Local" style="width:100%">
+    <tr>
+        <th>Tournament</th>
+        <th>Game</th>
+        <th>Placement</th>
+        <th>Date</th>
+    </tr>
+</table>
