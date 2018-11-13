@@ -4,61 +4,32 @@
 }
 
 <script src='https://cdnjs.cloudflare.com/ajax/libs/tabletop.js/1.5.1/tabletop.min.js'></script>
-<script type='text/javascript'>
-    var publicSpreadsheetUrl = 'https://docs.google.com/spreadsheets/d/1Y9FSrIkOx4KxDy7-ZYpx75hyHkqYgKS1vA1yCyU8rTs/edit?usp=sharing';
-
-    function init() {
-        Tabletop.init({
-            key: publicSpreadsheetUrl,
-            callback: showInfo,
-            simpleSheet: true,
-            orderby: 'Date',
-            reverse: true
-        })
-    }
-
-    function showInfo(data, tabletop) {
-        data.forEach(addTournamentRow);
-    }
-
-    window.addEventListener('DOMContentLoaded', init)
-
-    function addTournamentRow(tournamentdata) {
-        if (tournamentdata.Placement){
-            var table = document.getElementById(tournamentdata.Size);
-            if (table) {
-                var row = table.insertRow(-1);
-                var tournamentNameCell = row.insertCell(0);
-                var gameNameCell = row.insertCell(1);
-                var placementCell = row.insertCell(2);
-                var dateCell = row.insertCell(3);
-                tournamentNameCell.innerHTML = "<a target=_blank href=" + tournamentdata.Link + ">" + tournamentdata.Tournament + "</a>";
-                gameNameCell.innerHTML = tournamentdata.Game;
-                placementCell.innerHTML = tournamentdata.Placement + " of " + tournamentdata.Entrants;
-                dateCell.innerHTML = tournamentdata.Date;
-            }
-        }
-    }
-</script>
+<script src='~/js/TournamentResults.js'></script>
 
 <h2>@ViewData["Title"]</h2>
 
 <h3>Majors</h3>
-<table id="Major" style="width:100%">
+<table style="width:100%">
+    <thead>
     <tr>
-        <th>Tournament</th>
-        <th>Game</th>
-        <th>Placement</th>
-        <th>Date</th>
+        <th onclick="sortTournamentTable('Tournament','Major','string')">Tournament</th>
+        <th onclick="sortTournamentTable('Game','Major','string')">Game</th>
+        <th onclick="sortTournamentTable('Placement','Major','number')">Placement</th>
+        <th onclick="sortTournamentTable('Date','Major','date')">Date</th>
     </tr>
+    </thead>
+    <tbody id="Major"/>
 </table>
 
 <h3>Locals</h3>
-<table id="Local" style="width:100%">
-    <tr>
-        <th>Tournament</th>
-        <th>Game</th>
-        <th>Placement</th>
-        <th>Date</th>
-    </tr>
+<table style="width:100%">
+    <thead>
+        <tr>
+            <th onclick="sortTournamentTable('Tournament','Local','string')">Tournament</th>
+            <th onclick="sortTournamentTable('Game','Local','string')">Game</th>
+            <th onclick="sortTournamentTable('Placement','Local','number')">Placement</th>
+            <th onclick="sortTournamentTable('Date','Local','date')">Date</th>
+        </tr>
+    </thead>
+    <tbody id="Local" />
 </table>
