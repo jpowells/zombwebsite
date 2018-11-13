@@ -1,17 +1,18 @@
 ﻿body {
-    background-color: #333300;
+    background-color: #31231E;
     color: #FFFFFF;
 }
 
-h1 {
-    color: #FFFF33;
-    text-align: center;
-    font: italic 200% fantasy;
+h1,h2,h3 {
+    color: #E3D888;
+    text-align: left;
 }
 
 p {
-    background-color: #FFFF33;
-    color: #333300;
-    text-align: right;
-    border: 3px groove #FFFF33;
+    color: #E2F1AF;
+    text-align: left;
+}
+
+th {
+
 }
