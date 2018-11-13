@@ -1,4 +1,7 @@
 ﻿
+<link rel="stylesheet" type="text/css" href="~/css/DefaultStyle.css">
+
+
 @{
     ViewData["Title"] = "Tournament Results";
 }
@@ -7,18 +10,18 @@
 <script src='~/js/TournamentResults.js'></script>
 
 <h2>@ViewData["Title"]</h2>
-
+<p>Listed here are some of the tournaments I've participated in over the years, feel free to click a header to sort the tables!</p>
 <h3>Majors</h3>
 <table style="width:100%">
     <thead>
-    <tr>
-        <th onclick="sortTournamentTable('Tournament','Major','string')">Tournament</th>
-        <th onclick="sortTournamentTable('Game','Major','string')">Game</th>
-        <th onclick="sortTournamentTable('Placement','Major','number')">Placement</th>
-        <th onclick="sortTournamentTable('Date','Major','date')">Date</th>
-    </tr>
+        <tr>
+            <th onclick="sortTournamentTable('Tournament','Major','string')">Tournament</th>
+            <th onclick="sortTournamentTable('Game','Major','string')">Game</th>
+            <th onclick="sortTournamentTable('Placement','Major','number')">Placement</th>
+            <th onclick="sortTournamentTable('Date','Major','date')">Date</th>
+        </tr>
     </thead>
-    <tbody id="Major"/>
+    <tbody id="Major" />
 </table>
 
 <h3>Locals</h3>
