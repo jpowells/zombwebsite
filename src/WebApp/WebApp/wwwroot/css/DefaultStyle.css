@@ -1,5 +1,15 @@
-﻿body {
-    background-color: #31231E;
+﻿/*
+    Color Scheme, Dark to Light
+    #31231E
+    #42342F
+    #5A3A31
+    #84714F
+    #E3D888
+    #E2F1AF
+*/
+
+body {
+    background-color: #42342F;
     color: #FFFFFF;
 }
 
@@ -13,6 +23,41 @@ p {
     text-align: left;
 }
 
-th {
+td,th{
+    border:1px solid black;
+    padding: 2px;
+}
 
+th {
+    color: #E3D888;
+    text-decoration:solid;
+}
+
+a{
+    text-decoration:underline;
+}
+/*
+a:link {
+    color: #E2F1AF;
+}
+
+a:visited {
+    color: #84714F;
+}
+    */
+tr {
+    color: #E2F1AF;
+}
+
+table {
+    border-spacing: 10px;
+    border-color: white;
+}
+
+tr:nth-child(odd) {
+    background-color: #31231E;
+}
+
+th,tr:nth-child(even) {
+    background-color: #5A3A31;
 }
