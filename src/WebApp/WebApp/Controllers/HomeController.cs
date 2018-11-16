@@ -20,7 +20,7 @@ namespace WebApp.Controllers
             return View();
         }
 
-        public IActionResult MyEvents()
+        public IActionResult UpcomingEvents()
         {
             return View();
         }

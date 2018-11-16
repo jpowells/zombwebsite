@@ -21,14 +21,17 @@ body {
     background-color: var(--main-bg-color);
 }
 
-h1,h2,h3 {
+h1, h2, h3 {
     color: var(--main-header-color);
-    text-align: left;
+    font-weight: bold;
+    display: inline-block;
+    text-align: center;
+    left: 0;
+    width: 100%;
 }
 
 p {
     color: var(--main-text-color);
-    text-align: left;
 }
 
 td, th {
@@ -53,4 +56,12 @@ tr:nth-child(odd) {
 
 th,tr:nth-child(even) {
     background-color: var(--second-bg-color);
+}
+
+#socialmedia {
+    color: var(--main-header-color);
+    font-weight: bold;
+    display: unset;
+    text-align: center;
+    width: unset;
 }

@@ -1,0 +1,27 @@
+﻿
+@{
+    ViewData["Title"] = "Upcoming Events";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<link rel="stylesheet" type="text/css" href="~/css/DefaultStyle.css">
+<script src='https://cdnjs.cloudflare.com/ajax/libs/tabletop.js/1.5.1/tabletop.min.js'></script>
+<script src='~/js/UpcomingEvents.js'></script>
+
+<h2>@ViewData["Title"]</h2>
+
+<p>While I almost certainly won't be able to make it to all of these events, I hope to make it to a number of them!</p>
+
+<h3>Events</h3>
+<table style="width:100%">
+    <thead>
+        <tr>
+            <th>Tournament</th>
+            <th>Dates</th>
+            <th>Location</th>
+            <th>Status</th>
+            <th>Special Notes</th>
+        </tr>
+    </thead>
+    <tbody id="UpcomingEvents" />
+</table>
