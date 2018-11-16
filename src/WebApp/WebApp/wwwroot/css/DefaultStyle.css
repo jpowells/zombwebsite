@@ -1,63 +1,56 @@
 ﻿/*
     Color Scheme, Dark to Light
     #31231E
-    #42342F
-    #5A3A31
+    var(--main-bg-color)
+    var(--second-text-color)
     #84714F
-    #E3D888
-    #E2F1AF
+    var(--main-header-color)
+    var(--main-text-color)
 */
 
+:root{
+    --main-bg-color: #78C0E0;
+    --main-header-color: #0E0E52;
+    --main-text-color: #000000;
+    --main-link-color: #3943B7;
+    --second-bg-color: #449DD1;
+    --third-bg-color: #339CC0;
+}
+
 body {
-    background-color: #42342F;
-    color: #FFFFFF;
+    background-color: var(--main-bg-color);
 }
 
 h1,h2,h3 {
-    color: #E3D888;
+    color: var(--main-header-color);
     text-align: left;
 }
 
 p {
-    color: #E2F1AF;
+    color: var(--main-text-color);
     text-align: left;
 }
 
-td,th{
-    border:1px solid black;
+td, th {
+    border: 1px outset var(--main-header-color);
     padding: 2px;
-}
-
-th {
-    color: #E3D888;
-    text-decoration:solid;
+    color: var(--main-header-color);
+    text-decoration: solid;
 }
 
 a{
+    color: var(--main-link-color);
     text-decoration:underline;
 }
-/*
-a:link {
-    color: #E2F1AF;
-}
 
-a:visited {
-    color: #84714F;
-}
-    */
 tr {
-    color: #E2F1AF;
-}
-
-table {
-    border-spacing: 10px;
-    border-color: white;
+    color: var(--main-text-color);
 }
 
 tr:nth-child(odd) {
-    background-color: #31231E;
+    background-color: var(--third-bg-color);
 }
 
 th,tr:nth-child(even) {
-    background-color: #5A3A31;
+    background-color: var(--second-bg-color);
 }
